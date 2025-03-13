@@ -2,17 +2,15 @@ import { Scale, Gavel, Users } from "lucide-react"; // Import icons
 
 const WhyChooseUs = () => {
   return (
-    <div className="flex  items-center bg-white py-16 px-5">
-      {/* Left Side - Image */}
-      <div className="w-full md:hidden  h-[500px] lg:h-auto ">
+    <div className="flex md:flex-col  items-center bg-white py-16 px-5">
+      <div className="w-full  h-[500px] lg:h-auto ">
         <img
-          src="/images/high-court.jpg" // Change to actual image path
+          src="/images/high-court.jpg"
           alt="Why Choose Us"
           className="w-full h-full object-cover  shadow-lg"
         />
       </div>
 
-      {/* Right Side - Content */}
       <div className="w-full  bg-[#2e2e2e] h-[500px] p-12 text-white  flex flex-col justify-center">
         <h2 className="text-4xl font-semibold text-white">
           Why <span className="text-[#cfa51b]">Select Us?</span>

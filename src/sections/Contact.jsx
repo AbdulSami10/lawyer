@@ -40,27 +40,21 @@ const Contact = () => {
     message: "",
   });
 
-  // Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle Form Submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const { firstName, lastName, email, phone, message } = formData;
 
-    // WhatsApp message format
     const whatsappMessage = `Hello, I would like to get in touch:\n\n👤 Name: ${firstName} ${lastName}\n📧 Email: ${email}\n📞 Phone: ${phone}\n✉️ Message: ${message}`;
 
-    // Encode message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    // WhatsApp URL
     const whatsappUrl = `https://wa.me/923002503071?text=${encodedMessage}`;
 
-    // Redirect user to WhatsApp
     window.open(whatsappUrl, "_blank");
   };
 

@@ -1,8 +1,7 @@
 const FounderSection = () => {
   return (
-    <div className="flex items-center gap-10 h-full justify-center bg-gray-100 py-16 px-5">
-      {/* Image Section */}
-      <div className="w-full  flex md:hidden justify-center  ">
+    <div className="flex items-center md:flex-col gap-10 h-full justify-center bg-gray-100 py-16 px-5">
+      <div className="w-full  flex  justify-center  ">
         <img
           src="/images/solo.jpg"
           alt="Asif Ali Jokhio"
@@ -12,7 +11,6 @@ const FounderSection = () => {
         />
       </div>
 
-      {/* Text Section */}
       <div className="w-full  md:text-center ">
         <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900">
           ASIF ALI JOKHIO
