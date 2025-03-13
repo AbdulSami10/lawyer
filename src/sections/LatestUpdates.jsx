@@ -75,12 +75,12 @@ const LatestUpdates = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="relative lg:h-[300px] lg:w-[500px] w-[250px] h-[200px] mx-auto overflow-hidden rounded-lg"
+                className="relative h-[300px] w-[700px]  mx-auto overflow-hidden rounded-lg"
               >
                 <img
                   src={`images/updates/${update}`}
                   alt={update}
-                  className="rounded-lg w-full h-full object-contain transition-opacity duration-500 ease-in-out"
+                  className="rounded-lg w-full h-full object-cover transition-opacity duration-500 ease-in-out"
                 />
               </motion.div>
             </SwiperSlide>
