@@ -15,7 +15,11 @@ const HeroSection = () => {
             Your Case Deserves a Top-Notch Defense.
           </div>
           <div className="flex justify-end mt-3">
-            <a href="#contact">
+            <a
+              href="https://wa.me/923002503071"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button className="uppercase bg-[#cfa51b] text-[15pt] p-4 rounded">
                 Get in touch
               </button>

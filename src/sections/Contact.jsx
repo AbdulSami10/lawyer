@@ -1,3 +1,4 @@
+import { useState } from "react";
 import RevealY from "../RevealY";
 
 const legalRepresentatives = [
@@ -6,42 +7,74 @@ const legalRepresentatives = [
     title: "Advocate High Court",
     phone: "+92 336 8921505 / +92 341 2219007",
     email: "muzammilbhutto417@gmail.com",
-    image: "/images/muzammil.jpg",
+    image: "/images/avater.png",
   },
   {
     name: "IMTIAZ HUSSAIN ABASSI",
     title: "Advocate High Court",
     email: "lawyer.imtiaz@gmail.com",
-    image: "/images/imtiaz.jpg",
+    image: "/images/avater.png",
   },
   {
     name: "DILSHAD AHMED JOKHIO",
     title: "Advocate Lower Court",
     phone: "+92 304 3361013",
     email: "dilshadalijokhio123@gmail.com",
-    image: "/images/dilshad.jpg",
+    image: "/images/avater.png",
   },
   {
     name: "MUHAMMAD SHAYAN",
     title: "Office Associate",
     phone: "+92 346 2752621",
     email: "muhammadshayanhussain95@gmail.com",
-    image: "/images/shayan.jpg",
+    image: "/images/avater.png",
   },
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // Handle Input Change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle Form Submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { firstName, lastName, email, phone, message } = formData;
+
+    // WhatsApp message format
+    const whatsappMessage = `Hello, I would like to get in touch:\n\n👤 Name: ${firstName} ${lastName}\n📧 Email: ${email}\n📞 Phone: ${phone}\n✉️ Message: ${message}`;
+
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // WhatsApp URL
+    const whatsappUrl = `https://wa.me/923002503071?text=${encodedMessage}`;
+
+    // Redirect user to WhatsApp
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <>
       <div className="py-20 px-5 bg-gray-100" id="contact">
-        <div className="mx-auto  text-center">
+        <div className="mx-auto text-center">
           <h3 className="text-5xl font-bebas">Our Legal Representatives</h3>
           <p className="text-lg text-gray-600 mt-2">
             Meet our experienced legal professionals.
           </p>
         </div>
 
-        <div className="flex justify-center flex-wrap gap-16 mt-10  ">
+        <div className="flex justify-center flex-wrap gap-16 mt-10">
           {legalRepresentatives.map((lawyer, index) => (
             <div
               key={index}
@@ -64,6 +97,8 @@ const Contact = () => {
           ))}
         </div>
       </div>
+
+      {/* Contact Form */}
       <div
         className="relative bg-cover bg-center py-20 px-5"
         style={{ backgroundImage: "url(/images/cidade.jpg)" }}
@@ -76,46 +111,66 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Form */}
         <div className="relative mt-10 flex justify-center">
-          <form className="bg-white p-8 rounded-lg shadow-lg max-w-[500px] w-full">
+          <form
+            className="bg-white p-8 rounded-lg shadow-lg max-w-[500px] w-full"
+            onSubmit={handleSubmit}
+          >
             <h3 className="text-3xl font-semibold text-center mb-5">
               Send a Message
             </h3>
             <div className="flex gap-4">
               <input
-                name="name"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
                 className="w-1/2 bg-gray-100 outline-none p-3 rounded"
                 placeholder="First Name *"
+                required
               />
               <input
-                name="last_name"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
                 className="w-1/2 bg-gray-100 outline-none p-3 rounded"
                 placeholder="Last Name *"
+                required
               />
             </div>
             <div className="flex gap-4 mt-4">
               <input
                 name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-1/2 bg-gray-100 outline-none p-3 rounded"
                 placeholder="E-mail *"
+                required
               />
               <input
                 name="phone"
                 type="tel"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-1/2 bg-gray-100 outline-none p-3 rounded"
                 placeholder="Phone *"
+                required
               />
             </div>
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               className="w-full bg-gray-100 outline-none p-3 rounded mt-4"
               placeholder="Message *"
-              name="message"
               rows="4"
+              required
             ></textarea>
-            <button className="w-full bg-[#cfa51b] hover:bg-black hover:opacity-80 text-white text-lg py-3 mt-4 rounded transition uppercase">
-              Submit
+            <button
+              type="submit"
+              className="w-full bg-[#cfa51b] hover:bg-black hover:opacity-80 text-white text-lg py-3 mt-4 rounded transition uppercase"
+            >
+              Send via WhatsApp
             </button>
           </form>
         </div>

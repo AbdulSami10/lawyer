@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { number: "500", text: "+ private equity transactions since 2022" },
-  { number: "100", text: "+ billion in capital markets since 2022" },
-  { number: "700", text: "+ financings since 2022" },
+  { number: "500+", text: "Number of Cases Handled" },
+  { number: "95%", text: "Success rate in cases handled" },
+  { number: "20+", text: "Years of Experience in practicing law" },
 ];
 
 const Stats = () => {
