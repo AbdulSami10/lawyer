@@ -33,7 +33,7 @@ const legalRepresentatives = [
 const Contact = () => {
   return (
     <>
-      <div className="py-20 px-5 bg-gray-100">
+      <div className="py-20 px-5 bg-gray-100" id="contact">
         <div className="mx-auto  text-center">
           <h3 className="text-5xl font-bebas">Our Legal Representatives</h3>
           <p className="text-lg text-gray-600 mt-2">

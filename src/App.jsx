@@ -1,6 +1,7 @@
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import FounderSection from "./sections/Founder";
 import Header from "./sections/Header";
 import HeroSection from "./sections/Hero";
 import MapSection from "./sections/Map";
@@ -15,7 +16,7 @@ export default function App() {
       <HeroSection />
       <About />
       <WhyChooseUs />
-
+      <FounderSection />
       <Services />
       <Stats />
       <Contact />
