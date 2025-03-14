@@ -1,4 +1,4 @@
-import { Scale, Gavel, Users } from "lucide-react"; // Import icons
+import { Scale, Gavel, Users } from "lucide-react"; 
 
 const WhyChooseUs = () => {
   return (
