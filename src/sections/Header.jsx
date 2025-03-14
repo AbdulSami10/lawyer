@@ -26,6 +26,12 @@ const Header = () => {
               </li>
 
               <li>
+                <a className="hover:text-[#dec985]" href="#team">
+                  Our team
+                </a>
+              </li>
+
+              <li>
                 <a className="hover:text-[#dec985]" href="#contact">
                   Contact us
                 </a>
