@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -35,6 +33,7 @@ const Contact = () => {
       <div
         className="relative bg-cover bg-center py-20 px-5"
         style={{ backgroundImage: "url(/images/cidade.jpg)" }}
+        id="contact"
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="relative mx-auto max-w-[968px] text-center">

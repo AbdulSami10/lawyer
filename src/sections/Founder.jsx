@@ -1,6 +1,9 @@
 const FounderSection = () => {
   return (
-    <div className="flex items-center md:flex-col gap-10 h-full justify-center bg-gray-100 py-16 px-5">
+    <div
+      className="flex items-center md:flex-col gap-10 h-full justify-center bg-gray-100 py-16 px-5"
+      id="about"
+    >
       <div className="w-full  flex  justify-center  ">
         <img
           src="/images/solo.jpg"
